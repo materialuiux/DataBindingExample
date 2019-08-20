@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+        <variable name="iclick" type="com.materialuiux.databindingexample.IClick"/>
+
+        <variable
+            name="post"
+            type="com.materialuiux.databindingexample.Post" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="@{() -> iclick.onClicked(post)}"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tilte"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{post.title}"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/body"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="@{post.body}"
+            android:textSize="14sp"
+            android:textStyle="normal" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="1dp"
+            android:background="#d2d2d2" />
+
+    </LinearLayout>
+
+</layout>
